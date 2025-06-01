@@ -7,12 +7,18 @@
       href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
       h2 {
-        font-size: 3,5rem;
+        font-size: 28px;
         margin: 0;
         color: white;
       }
+
       body {
         margin: 0;
         height: 100vh;
@@ -44,23 +50,17 @@
         text-align: center;
         color: white;
         z-index: 30;
-        max-width: 700px;
-      }
-
-      .message h1 {
-        font-family: "Pacifico", cursive;
-        font-size: 50 px;
-        color: #fff0f5;
-        margin-bottom: 55px;
-        text-shadow: 1px 1px 3px #ff69b4;
+        max-width: 800px;
+        padding: 0 20px;
       }
 
       .message h1 {
         font-family: "Poppins", sans-serif;
-        font-size: 55px;
-        color: #ffffff;
-        margin-bottom: 55px;
-        text-shadow: 1px 1px 3px #ff69b4;
+        font-size: 60px;
+        color: #fff0f5;
+        margin-bottom: 40px;
+        text-shadow: 2px 2px 5px #ff69b4;
+        font-weight: 700;
       }
 
       .heart {
@@ -76,6 +76,7 @@
         font-weight: bold;
         animation: fall linear;
         opacity: 0.8;
+        font-size: 24px;
       }
 
       .text-iuthuoi {
@@ -95,17 +96,14 @@
     </style>
   </head>
   <body>
-    <!-- Nút nhạc -->
     <button id="playMusicButton" class="music-button">
       nhạc lên nè babyy 🎵
     </button>
 
-    <!-- Nhạc nền -->
     <audio id="bg-music" autoplay loop>
       <source src="./iuemm.mp3" type="audio/mpeg" />
     </audio>
 
-    <!-- Nội dung lời nhắn -->
     <div class="message">
       <h1>Chúc em, ngày 1/6 thật hạnh phúc nha bẹpp 💖</h1>
       <h2>
@@ -117,26 +115,23 @@
     </div>
 
     <script>
-      // Phát nhạc khi nhấn
       document
         .getElementById("playMusicButton")
         .addEventListener("click", function () {
           document.getElementById("bg-music").play();
         });
 
-      // Tim rơi
       function createHeart() {
         const heart = document.createElement("div");
         heart.classList.add("heart");
         heart.textContent = "💗";
         heart.style.left = Math.random() * 100 + "vw";
         heart.style.animationDuration = 2 + Math.random() * 3 + "s";
-        heart.style.fontSize = 16 + Math.random() * 16 + "px";
+        heart.style.fontSize = 20 + Math.random() * 20 + "px";
         document.body.appendChild(heart);
         setTimeout(() => heart.remove(), 5000);
       }
 
-      // Chữ "yêu emm" rơi
       function createTextHearts() {
         const count = 5;
         for (let i = 0; i < count; i++) {
@@ -145,12 +140,12 @@
           textHeart.textContent = "yêu emm";
           textHeart.style.left = 20 + Math.random() * 60 + "vw";
           textHeart.style.animationDuration = 3 + Math.random() * 2 + "s";
+          textHeart.style.fontSize = 26 + Math.random() * 8 + "px";
           document.body.appendChild(textHeart);
           setTimeout(() => textHeart.remove(), 5000);
         }
       }
 
-      // Chữ "iu thúi" rơi nghiêng
       function createTextIuThuoi() {
         const count = 3;
         for (let i = 0; i < count; i++) {
@@ -159,13 +154,13 @@
           textIu.textContent = "iu thúi";
           textIu.style.left = 10 + Math.random() * 80 + "vw";
           textIu.style.animationDuration = 3 + Math.random() * 2 + "s";
+          textIu.style.fontSize = 26 + Math.random() * 8 + "px";
           textIu.style.top = "-2em";
           document.body.appendChild(textIu);
           setTimeout(() => textIu.remove(), 5000);
         }
       }
 
-      // Lặp hiệu ứng
       setInterval(createHeart, 200);
       setInterval(createTextHearts, 2000);
       setInterval(createTextIuThuoi, 2500);
